@@ -1,0 +1,75 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Imagem editorial de moda com overlay leve */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+}
+
+.hero-content {
+    height: 100%;
+    width: 100%;
+}
+
+.hero-text-box {
+    color: #FFFFFF;
+    max-width: 650px;
+    padding: 0 20px;
+}
+
+.hero-text-box .sub-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--border-light);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: #FFFFFF;
+}
+
+/* Botão Luxo */
+.btn-luxury {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: var(--bg-surface);
+    color: var(--brand-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border: 1px solid var(--bg-surface);
+    transition: var(--transition);
+}
+
+.btn-luxury:hover {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+/* Faixa de Benefícios */
+.sub-bar {
+    background-color: var(--bg-subtle);
+    border-bottom: 1px solid var(--border-light);
+    color: var(--brand-primary);
+}
+
+.tracking-wide {
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}

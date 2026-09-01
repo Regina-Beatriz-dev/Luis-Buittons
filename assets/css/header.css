@@ -1,0 +1,106 @@
+/* =================================
+   HEADER - LUIS BUITTONS
+==================================== */
+
+.header {
+    background-color: #FFFFFF !important;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem 3rem; /* Espaçamento mais nobre */
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.header-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Título / Logo */
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--brand-primary) !important;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+/* Navegação Global */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem; /* Maior respiro entre o menu e as ações */
+}
+
+/* Listas zeradas e alinhadas ao centro do eixo vertical */
+.nav-links ul, 
+.nav-actions ul {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* =============================================
+   HOVER PREMIUM (LINHA DA ESQUERDA P/ DIREITA)
+================================================ */
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-main) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding-bottom: 6px; /* Espaço para a linha deslizar abaixo da palavra */
+    transition: color 0.3s ease;
+}
+
+/* Pseudo-elemento da linha invisível por padrão (escala 0) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px; /* Linha fina e elegante */
+    background-color: var(--brand-primary);
+    transform: scaleX(0); /* Escondida na esquerda */
+    transform-origin: bottom left; /* Garante o crescimento da esquerda para a direita */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Animação fluída de luxo */
+}
+
+/* Ao passar o mouse, a linha expande até 100% */
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-links a:hover {
+    color: var(--brand-primary) !important;
+}
+
+/* ===========================================
+   ÍCONES (MAIORES E PERFEITAMENTE ALINHADOS)
+============================================== */
+
+.nav-actions i {
+    font-size: 1.45rem; /* Ícones maiores e mais marcantes */
+    color: var(--brand-primary) !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav-actions i:hover {
+    color: var(--brand-accent) !important;
+    transform: translateY(-2px); /* Elevação sutil ao passar o mouse */
+}

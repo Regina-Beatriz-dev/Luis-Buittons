@@ -1,0 +1,53 @@
+
+:root {
+    /* =================
+       PALETA DE CORES 
+    ==================== */
+    /* Cores de Fundo */
+    --bg-main: #FAF7F2;          /* Creme luxo super suave e limpo */
+    --bg-surface: #FFFFFF;       /* Branco puro para cards/header */
+    --bg-subtle: #F2EAE1;        /* Bege claro para hover/áreas secundárias */
+
+    /* Tons de Marrom / Ouro Velho */
+    --brand-primary: #5C3D2E;    /* Marrom nobre e profundo */
+    --brand-accent: #A37A58;     /* Dourado/Bronze acetinado */
+    --brand-hover: #805B43;      /* Tom aquecido para hovers */
+
+    /* Tipografia */
+    --text-main: #2B1E16;       /* Quase preto quente (alto contraste elegante) */
+    --text-muted: #7A685A;      /* Marrom suave para subtextos */
+    --text-on-dark: #FAF7F2;    /* Texto claro sobre fundo escuro */
+
+    /* Bordas & Detalhes */
+    --border-light: #E8DEC8;    /* Borda sutil de luxo */
+    --border-focus: #A37A58;    /* Borda para inputs ativos */
+
+    /* Efeitos Visuais */
+    --shadow-sm: 0 2px 8px rgba(43, 30, 22, 0.04);
+    --shadow-md: 0 8px 24px rgba(43, 30, 22, 0.08);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+html {
+    box-sizing: border-box;
+    background-color: var(--bg-main) 
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
