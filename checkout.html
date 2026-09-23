@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Luiz Buittons</title>
+
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/font.css">
+
+    <!-- Bootstrap 5.3 + ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-body-tertiary">
+
+    <!-- ========== CABEÇALHO ========== -->
+    <nav class="navbar navbar-expand-lg bg-body border-bottom">
+        <div class="container">
+
+            <a class="navbar-brand fw-semibold" href="index.html">LUIZ BUITTONS</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+                aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Categorias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                </ul>
+
+                <div class="d-flex gap-3 fs-5">
+                    <a href="#" class="link-dark" aria-label="Pesquisar"><i class="bi bi-search"></i></a>
+                    <a href="#" class="link-dark" aria-label="Minha conta"><i class="bi bi-person"></i></a>
+                    <a href="#" class="link-dark" aria-label="Favoritos"><i class="bi bi-heart"></i></a>
+                    <a href="carrinho.html" class="link-dark" aria-label="Carrinho"><i class="bi bi-bag"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- ========== FAIXA DE BENEFÍCIOS ========== -->
+    <section class="bg-body border-bottom py-3">
+        <div class="container">
+            <div class="row row-cols-2 row-cols-lg-4 g-3 text-center">
+
+                <div class="col">
+                    <i class="bi bi-truck"></i> <strong>Frete grátis</strong>
+                    <small class="d-block text-body-secondary">em compras acima de R$ 299</small>
+                </div>
+
+                <div class="col">
+                    <i class="bi bi-shield-check"></i> <strong>Pagamento seguro</strong>
+                    <small class="d-block text-body-secondary">seus dados protegidos</small>
+                </div>
+
+                <div class="col">
+                    <i class="bi bi-credit-card"></i> <strong>Parcele em até 12x</strong>
+                    <small class="d-block text-body-secondary">nos cartões de crédito</small>
+                </div>
+
+                <div class="col">
+                    <i class="bi bi-box-seam"></i> <strong>Troca garantida</strong>
+                    <small class="d-block text-body-secondary">em até 7 dias</small>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+    <main class="container my-5">
+
+        <!-- Título + etapas -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+            <div>
+                <h1 class="h2 mb-1">Finalizar compra</h1>
+                <p class="text-body-secondary mb-0">Preencha seus dados para concluir seu pedido com segurança.</p>
+            </div>
+
+            <div class="d-flex gap-2">
+                <span class="badge text-bg-light border text-secondary">1 Carrinho</span>
+                <span class="badge text-bg-dark" aria-current="step">2 Checkout</span>
+                <span class="badge text-bg-light border text-secondary">3 Confirmação</span>
+            </div>
+        </div>
+
+        <!-- Aviso mostrado se o carrinho chegar vazio nesta página -->
+        <div id="avisoCarrinhoVazio" class="alert alert-warning d-none" role="alert">
+            Seu carrinho está vazio. <a href="carrinho.html" class="alert-link">Volte ao carrinho</a> para adicionar produtos antes de finalizar a compra.
+        </div>
+
+        <div class="row g-4">
+
+            <!-- ===== LADO ESQUERDO: FORMULÁRIO ===== -->
+            <div class="col-lg-8">
+
+                <form id="formCheckout" class="needs-validation" novalidate>
+
+                    <!-- 1. Dados pessoais -->
+                    <section class="card shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h2 class="h4">1. Dados pessoais</h2>
+                            <p class="text-body-secondary">Informações para identificação do pedido.</p>
+
+                            <div class="row g-3">
+
+                                <div class="col-12">
+                                    <label for="nome" class="form-label">Nome completo *</label>
+                                    <input type="text" class="form-control" id="nome" name="nome"
+                                        placeholder="Digite seu nome completo" autocomplete="name" required>
+                                    <div class="invalid-feedback">Informe seu nome completo.</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="email" class="form-label">E-mail *</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="exemplo@email.com" autocomplete="email" required>
+                                    <div class="invalid-feedback">Informe um e-mail válido.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="cpf" class="form-label">CPF *</label>
+                                    <input type="text" class="form-control" id="cpf" name="cpf"
+                                        placeholder="000.000.000-00" inputmode="numeric"
+                                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" data-mascara="cpf" required>
+                                    <div class="invalid-feedback">Informe um CPF válido.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="telefone" class="form-label">Telefone *</label>
+                                    <input type="tel" class="form-control" id="telefone" name="telefone"
+                                        placeholder="(00) 00000-0000" autocomplete="tel"
+                                        pattern="\(\d{2}\) \d{4,5}-\d{4}" data-mascara="telefone" required>
+                                    <div class="invalid-feedback">Informe um telefone com DDD.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!-- 2. Endereço de entrega -->
+                    <section class="card shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h2 class="h4">2. Endereço de entrega</h2>
+                            <p class="text-body-secondary">Informe o endereço onde deseja receber seu pedido.</p>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-4">
+                                    <label for="cep" class="form-label">CEP *</label>
+                                    <input type="text" class="form-control" id="cep" name="cep"
+                                        placeholder="00000-000" inputmode="numeric" autocomplete="postal-code"
+                                        pattern="\d{5}-\d{3}" data-mascara="cep" required>
+                                    <div class="invalid-feedback">Informe um CEP válido.</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="rua" class="form-label">Rua *</label>
+                                    <input type="text" class="form-control" id="rua" name="rua"
+                                        placeholder="Digite o nome da rua" autocomplete="address-line1" required>
+                                    <div class="invalid-feedback">Informe a rua.</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="numero" class="form-label">Número *</label>
+                                    <input type="text" class="form-control" id="numero" name="numero"
+                                        placeholder="Ex: 123" required>
+                                    <div class="invalid-feedback">Informe o número.</div>
+                                </div>
+
+                                <div class="col-md-8">
+                                    <label for="complemento" class="form-label">Complemento</label>
+                                    <input type="text" class="form-control" id="complemento" name="complemento"
+                                        placeholder="Apto, bloco, etc." autocomplete="address-line2">
+                                </div>
+
+                                <div class="col-md-8">
+                                    <label for="cidade" class="form-label">Cidade *</label>
+                                    <input type="text" class="form-control" id="cidade" name="cidade"
+                                        placeholder="Digite sua cidade" autocomplete="address-level2" required>
+                                    <div class="invalid-feedback">Informe a cidade.</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="estado" class="form-label">Estado *</label>
+                                    <select class="form-select" id="estado" name="estado"
+                                        autocomplete="address-level1" required>
+                                        <option value="">Selecione</option>
+                                        <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                                        <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                                        <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                                        <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                                        <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                                        <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                                        <option>SP</option><option>SE</option><option>TO</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione o estado.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!-- 3. Pagamento -->
+                    <section class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <h2 class="h4">3. Forma de pagamento</h2>
+                            <p class="text-body-secondary">Escolha a melhor forma de pagamento.</p>
+
+                            <div class="row g-2 mb-4">
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" name="pagamento" id="pgCartao" value="cartao" checked>
+                                    <label class="btn btn-outline-dark w-100" for="pgCartao">
+                                        <i class="bi bi-credit-card"></i> Cartão
+                                    </label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" name="pagamento" id="pgPix" value="pix">
+                                    <label class="btn btn-outline-dark w-100" for="pgPix">
+                                        <i class="bi bi-x-diamond"></i> PIX
+                                    </label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" name="pagamento" id="pgBoleto" value="boleto">
+                                    <label class="btn btn-outline-dark w-100" for="pgBoleto">
+                                        <i class="bi bi-upc"></i> Boleto
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="dadosCartao" class="row g-3">
+
+                                <div class="col-12">
+                                    <label for="cartao" class="form-label">Número do cartão *</label>
+                                    <input type="text" class="form-control" id="cartao" name="cartao"
+                                        placeholder="0000 0000 0000 0000" inputmode="numeric" autocomplete="cc-number"
+                                        pattern="\d{4} \d{4} \d{4} \d{4}" data-mascara="cartao" required>
+                                    <div class="invalid-feedback">Informe o número do cartão.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="nomeCartao" class="form-label">Nome no cartão *</label>
+                                    <input type="text" class="form-control" id="nomeCartao" name="nomeCartao"
+                                        placeholder="Como está no cartão" autocomplete="cc-name" required>
+                                    <div class="invalid-feedback">Informe o nome impresso no cartão.</div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <label for="validade" class="form-label">Validade *</label>
+                                    <input type="text" class="form-control" id="validade" name="validade"
+                                        placeholder="MM/AA" inputmode="numeric" autocomplete="cc-exp"
+                                        pattern="(0[1-9]|1[0-2])/\d{2}" data-mascara="validade" required>
+                                    <div class="invalid-feedback">Use o formato MM/AA.</div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <label for="cvv" class="form-label">CVV *</label>
+                                    <input type="text" class="form-control" id="cvv" name="cvv"
+                                        placeholder="123" inputmode="numeric" autocomplete="cc-csc"
+                                        pattern="\d{3,4}" data-mascara="cvv" required>
+                                    <div class="invalid-feedback">Informe o CVV.</div>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-dark btn-lg w-100 mt-4" id="btnFinalizarPedido">
+                                <i class="bi bi-lock"></i> Finalizar compra
+                            </button>
+
+                            <p class="text-center text-body-secondary small mt-2 mb-0">
+                                <i class="bi bi-lock"></i> Seus dados estão seguros e protegidos.
+                            </p>
+                        </div>
+                    </section>
+
+                </form>
+            </div>
+
+
+            <!-- ===== LADO DIREITO: RESUMO ===== -->
+            <div class="col-lg-4">
+
+                <aside class="card shadow-sm sticky-lg-top resumo">
+                    <div class="card-body p-4">
+
+                        <h2 class="h4">Resumo do pedido</h2>
+                        <p class="text-body-secondary">Confira os itens do seu carrinho.</p>
+
+                        <!-- Os produtos do carrinho (localStorage) entram aqui via JS -->
+                        <div id="resumoProdutos"></div>
+
+                        <!-- Cupom -->
+                        <label for="cupom" class="form-label">Cupom de desconto</label>
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" id="cupom" placeholder="Digite seu cupom">
+                            <button class="btn btn-outline-dark" type="button">Aplicar</button>
+                        </div>
+
+                        <!-- Valores calculados a partir do carrinho -->
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal</span>
+                            <span id="resumoSubtotal">R$ 0,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Frete</span>
+                            <span id="resumoFrete">R$ 0,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between fs-5 border-top pt-3 mb-4">
+                            <strong>Total</strong>
+                            <strong id="resumoTotal">R$ 0,00</strong>
+                        </div>
+
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- JavaScript do Bootstrap (necessário para o menu do celular) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const form = document.getElementById('formCheckout');
+        const dadosCartao = document.getElementById('dadosCartao');
+        const camposCartao = dadosCartao.querySelectorAll('input');
+
+        const CHAVE_CARRINHO = 'carrinhoBuittons';
+        const FRETE_GRATIS_A_PARTIR_DE = 299;
+        const VALOR_FRETE = 15;
+
+
+        /* ---------- 1. Máscaras (CPF, telefone, CEP, cartão...) ---------- */
+
+        function aplicarMascara(valor, modelo) {
+            const numeros = valor.replace(/\D/g, '');
+            let i = 0;
+            return modelo.replace(/0/g, () => numeros[i++] ?? '').replace(/\D+$/, '');
+        }
+
+        const mascaras = {
+            cpf:      v => aplicarMascara(v, '000.000.000-00'),
+            telefone: v => aplicarMascara(v, v.replace(/\D/g, '').length > 10 ? '(00) 00000-0000' : '(00) 0000-0000'),
+            cep:      v => aplicarMascara(v, '00000-000'),
+            cartao:   v => aplicarMascara(v, '0000 0000 0000 0000'),
+            validade: v => aplicarMascara(v, '00/00'),
+            cvv:      v => aplicarMascara(v, '0000')
+        };
+
+        document.querySelectorAll('[data-mascara]').forEach(campo => {
+            campo.addEventListener('input', () => {
+                campo.value = mascaras[campo.dataset.mascara](campo.value);
+            });
+        });
+
+
+        /* ---------- 2. Mostrar/esconder os dados do cartão ---------- */
+
+        document.querySelectorAll('input[name="pagamento"]').forEach(opcao => {
+            opcao.addEventListener('change', () => {
+                const usaCartao = opcao.value === 'cartao';
+                dadosCartao.classList.toggle('d-none', !usaCartao);
+                camposCartao.forEach(campo => campo.required = usaCartao);
+            });
+        });
+
+
+        /* ---------- 3. Ligação com o carrinho (localStorage) ---------- */
+
+        const formatarMoeda = valor => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        function lerCarrinho() {
+            const salvo = localStorage.getItem(CHAVE_CARRINHO);
+            return salvo ? JSON.parse(salvo) : [];
+        }
+
+        function renderizarResumo() {
+            const carrinho = lerCarrinho();
+            const containerProdutos = document.getElementById('resumoProdutos');
+            const avisoVazio = document.getElementById('avisoCarrinhoVazio');
+            const btnFinalizar = document.getElementById('btnFinalizarPedido');
+
+            containerProdutos.innerHTML = '';
+            let subtotal = 0;
+
+            if (carrinho.length === 0) {
+                avisoVazio.classList.remove('d-none');
+                btnFinalizar.disabled = true;
+            } else {
+                avisoVazio.classList.add('d-none');
+                btnFinalizar.disabled = false;
+
+                carrinho.forEach(produto => {
+                    const subtotalProduto = produto.preco * produto.quantidade;
+                    subtotal += subtotalProduto;
+
+                    containerProdutos.innerHTML += `
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="${produto.imagem}" alt="${produto.nome}" width="64" height="64"
+                                class="rounded object-fit-cover">
+                            <div class="flex-grow-1">
+                                <strong class="d-block">${produto.nome}</strong>
+                                <small class="text-body-secondary">Quantidade: ${produto.quantidade}</small>
+                            </div>
+                            <strong>${formatarMoeda(subtotalProduto)}</strong>
+                        </div>
+                    `;
+                });
+            }
+
+            const frete = (subtotal === 0 || subtotal >= FRETE_GRATIS_A_PARTIR_DE) ? 0 : VALOR_FRETE;
+            const total = subtotal + frete;
+
+            document.getElementById('resumoSubtotal').innerText = formatarMoeda(subtotal);
+            document.getElementById('resumoFrete').innerText = frete === 0 ? 'Grátis' : formatarMoeda(frete);
+            document.getElementById('resumoTotal').innerText = formatarMoeda(total);
+        }
+
+        renderizarResumo();
+
+
+        /* ---------- 4. Validação e envio ---------- */
+
+        form.addEventListener('submit', evento => {
+            evento.preventDefault();
+
+            if (lerCarrinho().length === 0) {
+                return; // não deixa finalizar com carrinho vazio
+            }
+
+            if (form.checkValidity()) {
+                // Aqui entra o envio real para o servidor / gateway de pagamento
+                localStorage.removeItem(CHAVE_CARRINHO); // esvazia o carrinho após o pedido
+                alert('Pedido finalizado com sucesso!');
+                window.location.href = 'index.html';
+            }
+
+            form.classList.add('was-validated');
+        });
+    </script>
+
+</body>
+
+</html>

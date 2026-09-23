@@ -1,0 +1,208 @@
+/* =================================
+   SOBRE NÓS - LUIS BUITTONS
+==================================== */
+
+.about-hero {
+    background-color: var(--brand-primary);
+    color: var(--text-on-dark);
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.about-hero .sub-title {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--border-light);
+    margin-bottom: 1rem;
+}
+
+.about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(250, 247, 242, 0.8);
+}
+
+.sobre-section {
+    padding: 5rem 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-heading .sub-title {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--brand-accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    color: var(--text-main);
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* CARD DA HISTÓRIA */
+.card-historia {
+    background-color: var(--bg-surface);
+    border-left: 4px solid var(--brand-accent);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 3rem;
+}
+
+.card-historia h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-main);
+}
+
+.card-historia p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+/* ESTATÍSTICAS */
+.card-stat {
+    background-color: var(--brand-primary);
+    color: var(--text-on-dark);
+    border-radius: var(--radius-md);
+    text-align: center;
+    padding: 2rem;
+}
+
+.card-stat .numero {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--bg-surface);
+}
+
+.card-stat .legenda {
+    font-size: 0.85rem;
+    color: rgba(250, 247, 242, 0.75);
+}
+
+/* PILARES */
+.card-pilar {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.card-pilar:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.card-pilar i {
+    font-size: 1.7rem;
+    color: var(--brand-accent);
+    margin-bottom: 0.75rem;
+}
+
+.card-pilar h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.card-pilar p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* LINHA DO TEMPO */
+.card-timeline {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    height: 100%;
+}
+
+.card-timeline .ano {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.card-timeline h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.card-timeline p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.card-timeline.destaque-hoje {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+.card-timeline.destaque-hoje .ano,
+.card-timeline.destaque-hoje h5 {
+    color: var(--bg-surface);
+}
+
+.card-timeline.destaque-hoje p {
+    color: rgba(250, 247, 242, 0.75);
+}
+
+/* COMPROMISSO */
+.compromisso-box {
+    background-color: var(--bg-subtle);
+    border-radius: var(--radius-md);
+    text-align: center;
+    padding: 3rem;
+}
+
+.compromisso-box i {
+    font-size: 1.8rem;
+    color: var(--brand-accent);
+    margin-bottom: 1rem;
+}
+
+.compromisso-box p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}

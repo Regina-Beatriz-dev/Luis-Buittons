@@ -1,0 +1,113 @@
+/* =================================
+   PRODUTOS EM DESTAQUE - INDEX
+==================================== */
+
+.destaque-section {
+    padding: 5rem 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-heading .sub-title {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--brand-accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-accent);
+}
+
+.product-card .card-body {
+    padding: 1.5rem;
+}
+
+.product-card .card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-main);
+}
+
+.product-card .text-uppercase {
+    color: var(--brand-accent);
+    letter-spacing: 1.5px;
+    font-size: 0.7rem;
+}
+
+.product-card p.fw-bold {
+    color: var(--text-main);
+}
+
+.btn-add-carrinho {
+    background-color: var(--brand-primary);
+    color: var(--text-on-dark);
+    border: 1px solid var(--brand-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.btn-add-carrinho:hover {
+    background-color: var(--brand-hover);
+    border-color: var(--brand-hover);
+    color: var(--text-on-dark);
+}
+
+.destaque-links {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.btn-outline-luxury {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 0 0.5rem;
+    background-color: transparent;
+    color: var(--brand-primary);
+    border: 1px solid var(--brand-primary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.btn-outline-luxury:hover {
+    background-color: var(--brand-primary);
+    color: var(--text-on-dark);
+}
