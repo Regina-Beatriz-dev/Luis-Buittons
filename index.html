@@ -39,13 +39,13 @@
                         <li><a href="index.html" class="active">Início</a></li>
                         
                         <!-- Parte Ana e da Naty -->
-                        <li><a href="masculino.html">Masculino</a></li>
-                        <li><a href="feminino.html">Feminino</a></li>
-                        <li><a href="acessorios.html">Acessórios</a></li>
+                        <li><a href="pages/masculino.html">Masculino</a></li>
+                        <li><a href="pages/feminino.html">Feminino</a></li>
+                        <li><a href="pages/acessorios.html">Acessórios</a></li>
                         
                         <!-- Parte da Duda e do Davi -->
-                        <li><a href="sobre.html">Sobre nós</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="pages/sobre.html">Sobre nós</a></li>
+                        <li><a href="pages/contato.html">Contato</a></li>
                     </ul>
                 </div>
 
@@ -55,10 +55,10 @@
                         <li><a href="#" class="text-dark"><i class="fa-solid fa-heart"></i></a></li>
                         
                         <!-- Ícone do Carrinho (Parte do Rafa) -->
-                        <li><a href="carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a href="pages/carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
                         
                         <!-- Ícone de Login/Cliente (Parte do Davi) -->
-                        <li><a href="login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="pages/login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -200,38 +200,25 @@
                 </div>
 
                 <div class="destaque-links">
-                    <a href="feminino.html" class="btn-outline-luxury">Ver Coleção Feminina</a>
-                    <a href="masculino.html" class="btn-outline-luxury">Ver Coleção Masculina</a>
+                    <a href="pages/feminino.html" class="btn-outline-luxury">Ver Coleção Feminina</a>
+                    <a href="pages/masculino.html" class="btn-outline-luxury">Ver Coleção Masculina</a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- SCRIPT DO CARRINHO (mesma lógica usada em feminino.html e masculino.html) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const botoesAdicionar = document.querySelectorAll('.btn-add-carrinho');
-            botoesAdicionar.forEach(botao => {
-                botao.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-                    const nome = this.getAttribute('data-nome');
-                    const preco = parseFloat(this.getAttribute('data-preco'));
-                    const imagem = this.getAttribute('data-imagem');
-
-                    let carrinho = JSON.parse(localStorage.getItem('carrinhoBuittons')) || [];
-                    const produtoExistente = carrinho.find(item => item.id === id);
-
-                    if (produtoExistente) {
-                        produtoExistente.quantidade += 1;
-                    } else {
-                        carrinho.push({ id, nome, preco, imagem, quantidade: 1 });
-                    }
-
-                    localStorage.setItem('carrinhoBuittons', JSON.stringify(carrinho));
-                    alert(nome + " foi adicionado ao seu carrinho!");
-                });
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/carrinho-storage.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/itens.js"></script>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+        <div id="toast-carrinho" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

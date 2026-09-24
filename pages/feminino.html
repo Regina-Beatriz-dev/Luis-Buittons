@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <!--Links CSS | Favicon -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/font.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -27,26 +27,26 @@
     <header class="header">
         <div class="header-grid">
             <hgroup>
-                <h1>Luis Buittons</h1>
+                <a href="../index.html" style="text-decoration: none;"><h1>Luis Buittons</h1></a>
             </hgroup>
 
             <nav class="nav">
                 <div class="nav-links">
                     <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="masculino.html">Masculino</a></li>
-                        <li><a href="feminino.html">Feminino</a></li>
-                        <li><a href="acessorios.html">Acessórios</a></li>
-                        <li><a href="sobre.html">Sobre nós</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="../pages/masculino.html">Masculino</a></li>
+                        <li><a href="../pages/feminino.html">Feminino</a></li>
+                        <li><a href="../pages/acessorios.html">Acessórios</a></li>
+                        <li><a href="../pages/sobre.html">Sobre nós</a></li>
+                        <li><a href="../pages/contato.html">Contato</a></li>
                     </ul>
                 </div>
 
                 <div class="nav-actions">
                     <ul>
                         <li><a href="#" class="text-dark"><i class="fa-solid fa-heart"></i></a></li>
-                        <li><a href="carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                        <li><a href="login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="../pages/carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a href="../pages/login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -203,89 +203,6 @@
     </main>
     
     <!-- SCRIPT GERAL (Filtros, Ordenação e Carrinho) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- 1. LÓGICA DO CARRINHO ---
-            const botoesAdicionar = document.querySelectorAll('.btn-add-carrinho');
-            botoesAdicionar.forEach(botao => {
-                botao.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-                    const nome = this.getAttribute('data-nome');
-                    const preco = parseFloat(this.getAttribute('data-preco'));
-                    const imagem = this.getAttribute('data-imagem');
-                    
-                    let carrinho = JSON.parse(localStorage.getItem('carrinhoBuittons')) || [];
-                    const produtoExistente = carrinho.find(item => item.id === id);
-                    
-                    if (produtoExistente) {
-                        produtoExistente.quantidade += 1;
-                    } else {
-                        carrinho.push({ id, nome, preco, imagem, quantidade: 1 });
-                    }
-                    
-                    localStorage.setItem('carrinhoBuittons', JSON.stringify(carrinho));
-                    alert(nome + " foi adicionado ao seu carrinho!");
-                });
-            });
-
-            // --- 2. LÓGICA DOS FILTROS DE CATEGORIA ---
-            const checkboxes = document.querySelectorAll('.filtro-categoria');
-            const gridProdutos = document.getElementById('grid-produtos');
-            const produtos = Array.from(document.querySelectorAll('.produto-item'));
-            const contador = document.getElementById('contador-produtos');
-
-            function atualizarFiltros() {
-                // Pega quais categorias estão marcadas
-                const selecionados = Array.from(checkboxes)
-                    .filter(chk => chk.checked)
-                    .map(chk => chk.value);
-                
-                let visiveis = 0;
-
-                produtos.forEach(produto => {
-                    const categoria = produto.getAttribute('data-categoria');
-                    
-                    // Se nada estiver marcado ou a categoria do produto estiver marcada, mostramos
-                    if (selecionados.length === 0 || selecionados.includes(categoria)) {
-                        produto.style.display = 'block';
-                        visiveis++;
-                    } else {
-                        // Caso contrário, ocultamos
-                        produto.style.display = 'none';
-                    }
-                });
-
-                contador.innerText = `Mostrando ${visiveis} produtos`;
-            }
-
-            // Ativa o filtro sempre que clicar em um checkbox
-            checkboxes.forEach(chk => {
-                chk.addEventListener('change', atualizarFiltros);
-            });
-
-            // --- 3. LÓGICA DE ORDENAÇÃO POR PREÇO ---
-            const selectOrdem = document.getElementById('ordenar-precos');
-            
-            selectOrdem.addEventListener('change', function() {
-                const valor = this.value; // 0, 1 ou 2
-                
-                if (valor === '1') {
-                    // Menor preço
-                    produtos.sort((a, b) => parseFloat(a.getAttribute('data-preco')) - parseFloat(b.getAttribute('data-preco')));
-                } else if (valor === '2') {
-                    // Maior preço
-                    produtos.sort((a, b) => parseFloat(b.getAttribute('data-preco')) - parseFloat(a.getAttribute('data-preco')));
-                } else {
-                    // Mais recentes (Ordem original)
-                    produtos.sort((a, b) => parseInt(a.getAttribute('data-ordem')) - parseInt(b.getAttribute('data-ordem')));
-                }
-
-                // Reorganiza no HTML
-                produtos.forEach(produto => gridProdutos.appendChild(produto));
-            });
-
-        });
-    </script>
+    <script src="../assets/js/feminino.js"></script>
 </body>
 </html>
