@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Luis Buittons</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { corePlugins: { preflight: false } };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Links CSS | Favicon -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+    <main>
+        <section class="secao-acesso">
+            <div class="quadro-acesso shadow-sm ">
+                <div class="painel-marca">
+                    <span class="legenda">Bem-vindo de volta</span>
+                    <h2>A elegância tem hora marcada. A sua é agora.</h2>
+                    <p>Entre na sua conta para acompanhar pedidos, favoritos e vantagens exclusivas.</p>
+                </div>
+
+                <div class="painel-formulario">
+                    <h1>Entrar</h1>
+                    <p class="texto-boas-vindas">Acesse sua conta com e-mail e senha.</p>
+
+                    <form id="formulario-entrar" class="needs-validation" novalidate>
+                        <div class="campo">
+                            <label for="campo-email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="campo-email" placeholder="seuemail@exemplo.com" required>
+                            <div class="invalid-feedback">Informe um e-mail válido.</div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="campo-senha" class="form-label">Senha</label>
+                            <div class="grupo-senha">
+                                <input type="password" class="form-control" id="campo-senha" placeholder="Sua senha" required minlength="6">
+                                <button type="button" class="botao-mostrar-senha" data-alvo="campo-senha" aria-label="Mostrar senha">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="invalid-feedback">A senha deve ter no mínimo 6 caracteres.</div>
+                        </div>
+
+                        <div class="linha-opcoes">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="lembrar-acesso">
+                                <label class="form-check-label" for="lembrar-acesso">Lembrar de mim</label>
+                            </div>
+                            <a href="#" class="link-recuperar">Esqueci minha senha</a>
+                        </div>
+
+                        <button type="submit" class="botao-entrar">Entrar</button>
+                    </form>
+
+                    <p class="texto-rodape-formulario">Ainda não tem conta? <a href="cadastro.html">Criar conta</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AVISO -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+        <div id="aviso-formulario" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/login.js"></script>
+</body>
+</html>
