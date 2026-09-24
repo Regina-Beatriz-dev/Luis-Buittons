@@ -1,39 +1,75 @@
+@import "tailwindcss";
 
-:root {
-    /* =================
-       PALETA DE CORES 
-    ==================== */
-    /* Cores de Fundo */
-    --bg-main: #FAF7F2;          /* Creme luxo super suave e limpo */
-    --bg-surface: #FFFFFF;       /* Branco puro para cards/header */
-    --bg-subtle: #F2EAE1;        /* Bege claro para hover/áreas secundárias */
+@theme {
+     /* Mapeamento de Cores para o Tailwind v4 */
+    --color-bg-main: var(--bg-main);
+    --color-bg-surface: var(--bg-surface);
+    --color-bg-subtle: var(--bg-subtle);
 
-    /* Tons de Marrom / Ouro Velho */
-    --brand-primary: #5C3D2E;    /* Marrom nobre e profundo */
-    --brand-accent: #A37A58;     /* Dourado/Bronze acetinado */
-    --brand-hover: #805B43;      /* Tom aquecido para hovers */
+    --color-brand-primary: var(--brand-primary);
+    --color-brand-accent: var(--brand-accent);
+    --color-brand-hover: var(--brand-hover);
 
-    /* Tipografia */
-    --text-main: #2B1E16;       /* Quase preto quente (alto contraste elegante) */
-    --text-muted: #7A685A;      /* Marrom suave para subtextos */
-    --text-on-dark: #FAF7F2;    /* Texto claro sobre fundo escuro */
+    --color-text-main: var(--text-main);
+    --color-text-muted: var(--text-muted);
+    --color-text-on-dark: var(--text-on-dark);
 
-    /* Bordas & Detalhes */
-    --border-light: #E8DEC8;    /* Borda sutil de luxo */
-    --border-focus: #A37A58;    /* Borda para inputs ativos */
+    --color-border-light: var(--border-light);
+    --color-border-focus: var(--border-focus);
 
-    /* Efeitos Visuais */
+    /* Efeitos Visuais Utilitários */
     --shadow-sm: 0 2px 8px rgba(43, 30, 22, 0.04);
     --shadow-md: 0 8px 24px rgba(43, 30, 22, 0.08);
     --radius-sm: 4px;
-    --radius-md: 8px;
-    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius-md: 10px;
+    --animate-transition-global: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ========================================================
+   PALETAS DE CORES DINÂMICAS (Sua API de Design no CSS)
+=========================================================== */
 
+/* 🟤 TEMA PADRÃO (Sua paleta elegante de Creme e Marrom) */
+:root, [data-theme="classico"] {
+    --bg-main: #FAF7F2;          
+    --bg-surface: #FFFFFF;       
+    --bg-subtle: #F2EAE1;        
+
+    --brand-primary: #5C3D2E;    
+    --brand-accent: #A37A58;     
+    --brand-hover: #805B43;      
+
+    --text-main: #2B1E16;       
+    --text-muted: #7A685A;      
+    --text-on-dark: #FAF7F2;    
+
+    --border-light: #E8DEC8;    
+    --border-focus: #A37A58;    
+}
+
+/* 🕶️ TEMA ESCURO (Sua paleta adaptada para modo noturno) */
+[data-theme="escuro"] {
+    --bg-main: #14110F;          /* Preto quente profundo */
+    --bg-surface: #1F1B18;       /* Grafite aquecido para os cards/header */
+    --bg-subtle: #2B2420;        /* Tom intermediário para hovers/inputs */
+
+    --brand-primary: #A37A58;    /* O bronze passa a ser a cor primária para brilhar no escuro */
+    --brand-accent: #D4B295;     /* Um tom mais claro para destaques */
+    --brand-hover: #C29978;      
+
+    --text-main: #F5EFEB;       /* Branco quente de alto contraste */
+    --text-muted: #A39284;      /* Cinza amarronzado para subtextos */
+    --text-on-dark: #14110F;    /* Inverte: texto escuro quando o fundo for claro */
+
+    --border-light: #362E2A;    
+    --border-focus: #D4B295;    
+}
+
+/* ========================================================
+   ESTILOS GLOBAIS DE ESTRUTURA
+=========================================================== */
 html {
     box-sizing: border-box;
-    background-color: var(--bg-main) 
 }
 
 *,
@@ -50,4 +86,6 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+    /* Adiciona uma transição suave ao trocar de tema */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
