@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção Completa | Luis Buittons</title>
+
+    <!--BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!--Links CSS | Favicon -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/products.css">
+    <link rel="stylesheet" href="../assets/css/colecao.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+    <!-- HEADER PADRÃO DO GRUPO -->
+    <header class="header">
+        <div class="header-grid">
+            <hgroup>
+                <a href="../index.html" style="text-decoration: none;"><h1>Luis Buittons</h1></a>
+            </hgroup>
+
+            <nav class="nav">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="../pages/colecao.html" class="active">Coleção</a></li>
+                        <li><a href="../pages/masculino.html">Masculino</a></li>
+                        <li><a href="../pages/feminino.html">Feminino</a></li>
+                        <li><a href="../pages/acessorios.html">Acessórios</a></li>
+                        <li><a href="../pages/sobre.html">Sobre nós</a></li>
+                        <li><a href="../pages/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-actions">
+                    <ul>
+                        <li><a href="../pages/carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a href="../pages/login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER DA PÁGINA -->
+    <section class="colecao-hero">
+        <span class="sub-title">Outono | Inverno 2026</span>
+        <h1>Nossa Coleção Completa</h1>
+        <p>Todas as peças da Luis Buittons em um só lugar — do alfaiataria masculino aos vestidos e casacos femininos.</p>
+    </section>
+
+    <main class="container py-5">
+        <div class="row">
+            <!-- SIDEBAR DE FILTROS -->
+            <aside class="col-lg-3 mb-4">
+                <div class="filtro-card">
+                    <h5 class="mb-4"><i class="fa-solid fa-filter me-2"></i> Filtros</h5>
+
+                    <div class="mb-2">
+                        <h6 class="fw-bold mb-3">Categoria</h6>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-masculino" value="masculino">
+                            <label class="form-check-label" for="cat-masculino">Masculino</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-feminino" value="feminino">
+                            <label class="form-check-label" for="cat-feminino">Feminino</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- GRID DE PRODUTOS -->
+            <section class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                    <span class="text-muted small" id="contador-produtos">Mostrando 12 produtos</span>
+                    <select class="form-select form-select-sm w-auto border-0 bg-light" id="ordenar-precos">
+                        <option value="0" selected>Ordenar por: Mais Recentes</option>
+                        <option value="1">Menor Preço</option>
+                        <option value="2">Maior Preço</option>
+                    </select>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="grid-produtos">
+
+                    <!-- Camisa Social Oxford (Masculino) -->
+                    <div class="col produto-item" data-categoria="masculino" data-preco="350.00" data-ordem="1">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Camisa Social Oxford" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Masculino · Camisaria</span>
+                                <h5 class="card-title fs-6">Camisa Social Oxford</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 350,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="mas-01" data-nome="Camisa Social Oxford" data-preco="350.00" data-imagem="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vestido Midi em Seda (Feminino) -->
+                    <div class="col produto-item" data-categoria="feminino" data-preco="890.00" data-ordem="2">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Vestido Midi em Seda" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Feminino · Vestidos</span>
+                                <h5 class="card-title fs-6">Vestido Midi em Seda</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 890,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="fem-01" data-nome="Vestido Midi em Seda" data-preco="890.00" data-imagem="https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calça Reta Sartorial (Masculino) -->
+                    <div class="col produto-item" data-categoria="masculino" data-preco="590.00" data-ordem="3">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Calça Reta Sartorial" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Masculino · Alfaiataria</span>
+                                <h5 class="card-title fs-6">Calça Reta Sartorial</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 590,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="mas-02" data-nome="Calça Reta Sartorial" data-preco="590.00" data-imagem="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blusa Crepe com Amarração (Feminino) -->
+                    <div class="col produto-item" data-categoria="feminino" data-preco="320.00" data-ordem="4">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Blusa Crepe com Amarração" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Feminino · Blusas</span>
+                                <h5 class="card-title fs-6">Blusa Crepe com Amarração</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 320,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="fem-02" data-nome="Blusa Crepe com Amarração" data-preco="320.00" data-imagem="https://images.unsplash.com/photo-1551163943-3f6a855d1153?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blazer Lã Fria (Masculino) -->
+                    <div class="col produto-item" data-categoria="masculino" data-preco="1250.00" data-ordem="5">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Blazer Lã Fria" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Masculino · Casacos</span>
+                                <h5 class="card-title fs-6">Blazer Lã Fria</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 1.250,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="mas-03" data-nome="Blazer Lã Fria" data-preco="1250.00" data-imagem="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calça Pantalona Cintura Alta (Feminino) -->
+                    <div class="col produto-item" data-categoria="feminino" data-preco="450.00" data-ordem="6">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Calça Pantalona Cintura Alta" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Feminino · Alfaiataria</span>
+                                <h5 class="card-title fs-6">Calça Pantalona Cintura Alta</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 450,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="fem-03" data-nome="Calça Pantalona Cintura Alta" data-preco="450.00" data-imagem="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Camisa Polo Clássica (Masculino) -->
+                    <div class="col produto-item" data-categoria="masculino" data-preco="220.00" data-ordem="7">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Camisa Polo Clássica" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Masculino · Camisaria</span>
+                                <h5 class="card-title fs-6">Camisa Polo Clássica</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 220,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="mas-04" data-nome="Camisa Polo Clássica" data-preco="220.00" data-imagem="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saia Plissada Clássica (Feminino) -->
+                    <div class="col produto-item" data-categoria="feminino" data-preco="280.00" data-ordem="8">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Saia Plissada Clássica" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Feminino · Saias</span>
+                                <h5 class="card-title fs-6">Saia Plissada Clássica</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 280,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="fem-04" data-nome="Saia Plissada Clássica" data-preco="280.00" data-imagem="https://images.unsplash.com/photo-1582142306909-195724d33ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calça Chino Slim (Masculino) -->
+                    <div class="col produto-item" data-categoria="masculino" data-preco="380.00" data-ordem="9">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Calça Chino Slim" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Masculino · Alfaiataria</span>
+                                <h5 class="card-title fs-6">Calça Chino Slim</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 380,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="mas-05" data-nome="Calça Chino Slim" data-preco="380.00" data-imagem="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Casaco em Tweed (Feminino) -->
+                    <div class="col produto-item" data-categoria="feminino" data-preco="1150.00" data-ordem="10">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Casaco em Tweed" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Feminino · Casacos</span>
+                                <h5 class="card-title fs-6">Casaco em Tweed</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 1.150,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="fem-05" data-nome="Casaco em Tweed" data-preco="1150.00" data-imagem="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jaqueta de Couro Biker (Masculino) -->
+                    <div class="col produto-item" data-categoria="masculino" data-preco="1800.00" data-ordem="11">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1559551409-dadc959f76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Jaqueta de Couro Biker" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Masculino · Casacos</span>
+                                <h5 class="card-title fs-6">Jaqueta de Couro Biker</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 1.800,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="mas-06" data-nome="Jaqueta de Couro Biker" data-preco="1800.00" data-imagem="https://images.unsplash.com/photo-1559551409-dadc959f76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vestido Longo Botânico (Feminino) -->
+                    <div class="col produto-item" data-categoria="feminino" data-preco="750.00" data-ordem="12">
+                        <div class="card h-100 border-0 product-card">
+                            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Vestido Longo Botânico" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-uppercase small mb-1">Feminino · Vestidos</span>
+                                <h5 class="card-title fs-6">Vestido Longo Botânico</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 750,00</p>
+                                <button class="btn w-100 btn-add-carrinho" data-id="fem-06" data-nome="Vestido Longo Botânico" data-preco="750.00" data-imagem="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- TOAST DE CONFIRMAÇÃO (mesmo padrão do index.html) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+        <div id="toast-carrinho" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/carrinho-storage.js"></script>
+    <script src="../assets/js/itens.js"></script>
+</body>
+</html>
