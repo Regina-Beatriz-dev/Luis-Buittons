@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const quadro = document.querySelector('.quadro-acesso');
     requestAnimationFrame(() => quadro.classList.add('mostrar'));
 
+    // se já tem alguém logado, não faz sentido ficar na tela de login
+    if (obterUsuarioLogado()) {
+        window.location.href = 'perfil.html';
+        return;
+    }
+
     // alterna a visibilidade da senha
     document.querySelectorAll('.botao-mostrar-senha').forEach(botao => {
         botao.addEventListener('click', () => {
@@ -14,36 +20,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // validação e envio do formulário
     const formulario = document.getElementById('formulario-entrar');
     const botaoEntrar = formulario.querySelector('.botao-entrar');
+    const campoEmail = document.getElementById('campo-email');
+    const campoSenha = document.getElementById('campo-senha');
+    const lembrarAcesso = document.getElementById('lembrar-acesso');
 
     formulario.addEventListener('submit', (evento) => {
         evento.preventDefault();
 
         if (!formulario.checkValidity()) {
             formulario.classList.add('was-validated');
-            formulario.querySelectorAll(':invalid').forEach(campo => {
-                const container = campo.closest('.campo');
-                container.classList.add('balancar');
-                container.addEventListener('animationend', () => container.classList.remove('balancar'), { once: true });
-            });
+            balancarCamposInvalidos(formulario);
+            return;
+        }
+
+        const resultado = autenticarUsuario(campoEmail.value, campoSenha.value, lembrarAcesso.checked);
+
+        if (!resultado.sucesso) {
+            mostrarAviso(resultado.mensagem, 'erro');
+            balancarCamposInvalidos(formulario, true);
             return;
         }
 
         botaoEntrar.disabled = true;
         botaoEntrar.innerText = 'Entrando...';
 
-        setTimeout(() => {
-            mostrarAviso('Login realizado com sucesso! Redirecionando...');
-            setTimeout(() => { window.location.href = '../index.html'; }, 1500);
-        }, 900);
+        mostrarAviso(`Bem-vindo(a) de volta, ${resultado.usuario.nome.split(' ')[0]}!`, 'sucesso');
+        setTimeout(() => { window.location.href = 'perfil.html'; }, 1200);
     });
 
 });
-
-function mostrarAviso(mensagem) {
-    const caixa = document.getElementById('aviso-formulario');
-    caixa.querySelector('.toast-body').innerText = mensagem;
-    new bootstrap.Toast(caixa).show();
-}
