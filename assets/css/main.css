@@ -1,39 +1,3 @@
-@import "tailwindcss";
-
-@theme {
-     /* Mapeamento de Cores para o Tailwind v4 */
-    --color-bg-main: var(--bg-main);
-    --color-bg-surface: var(--bg-surface);
-    --color-bg-subtle: var(--bg-subtle);
-
-    --color-brand-primary: var(--brand-primary);
-    --color-brand-accent: var(--brand-accent);
-    --color-brand-hover: var(--brand-hover);
-
-    --color-text-main: var(--text-main);
-    --color-text-muted: var(--text-muted);
-    --color-text-on-dark: var(--text-on-dark);
-
-    --color-border-light: var(--border-light);
-    --color-border-focus: var(--border-focus);
-
-    /* Efeitos Visuais Utilitários */
-    --shadow-sm: 0 2px 8px rgba(43, 30, 22, 0.04);
-    --shadow-md: 0 8px 24px rgba(43, 30, 22, 0.08);
-    --radius-sm: 4px;
-    --radius-md: 10px;
-    --animate-transition-global: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* PONTE DE COMPATIBILIDADE
-   O CSS antigo do projeto (header.css, about.css, login.css, cadastro.css,
-   contato.css...) usa var(--transition). Como o Tailwind v4 exige o prefixo
-   --animate- pra registrar a variável no @theme, recriamos aqui o nome
-   antigo apontando pro mesmo valor, sem precisar reescrever todo CSS já feito. */
-:root {
-    --transition: var(--animate-transition-global);
-}
-
 /* ========================================================
    PALETAS DE CORES DINÂMICAS (Sua API de Design no CSS)
 =========================================================== */
@@ -54,6 +18,13 @@
 
     --border-light: #E8DEC8;    
     --border-focus: #A37A58;    
+
+    /* Efeitos Visuais Utilitários */
+    --shadow-sm: 0 2px 8px rgba(43, 30, 22, 0.04);
+    --shadow-md: 0 8px 24px rgba(43, 30, 22, 0.08);
+    --radius-sm: 4px;
+    --radius-md: 10px;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 🕶️ TEMA ESCURO (Sua paleta adaptada para modo noturno) */
