@@ -14,22 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <!--Links CSS | Favicon -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/font.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/hero.css">
-    <link rel="stylesheet" href="assets/css/products.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
-    <!-- HEADER PADRÃO DO GRUPO (Atualizado com os links de todos) -->
+    <!-- HEADER PADRÃO DO GRUPO -->
     <header class="header">
         <div class="header-grid">
             <hgroup>
-                <h1>Luis Buittons</h1>
+                <a href="../index.html" style="text-decoration: none;"><h1>Luis Buittons</h1></a>
             </hgroup>
 
             <nav class="nav">
@@ -38,6 +36,7 @@
                         <li><a href="../index.html">Início</a></li>
                         <li><a href="../pages/masculino.html">Masculino</a></li>
                         <li><a href="../pages/feminino.html">Feminino</a></li>
+                        <li><a href="../pages/infantil.html">Infantil</a></li>
                         <li><a href="../pages/acessorios.html">Acessórios</a></li>
                         <li><a href="../pages/novidades.html">Novidades</a></li>
                         <li><a href="../pages/sobre.html">Sobre nós</a></li>
@@ -47,13 +46,164 @@
 
                 <div class="nav-actions">
                     <ul>
-                        <!-- Ícone do Carrinho (Parte do Rafa) -->
-                        <li><a href="pages/carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                        
-                        <!-- Ícone de Login/Cliente (Parte do Davi) -->
-                        <li><a href="pages/login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="../pages/carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a href="../pages/login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
+    
+    <main class="container py-5 mt-4">
+        <!-- Título da Página -->
+        <div class="row mb-5 text-center">
+            <div class="col-12">
+                <span class="text-uppercase small tracking-wide text-muted">Coleção</span>
+                <h2 style="font-family: 'Playfair Display', serif;">Moda Infantil</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- SIDEBAR DE FILTROS -->
+            <aside class="col-lg-3 mb-4">
+                <div class="card border-0 shadow-sm p-3">
+                    <h5 class="mb-4" style="font-family: 'Playfair Display', serif;"><i class="fa-solid fa-filter me-2"></i> Filtros</h5>
+                    
+                    <!-- Filtro: Categoria -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-3">Categoria</h6>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-vestidos" value="vestidos">
+                            <label class="form-check-label" for="cat-vestidos">Vestidos</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-blusas" value="blusas">
+                            <label class="form-check-label" for="cat-blusas">Blusas & Camisas</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-conjuntos" value="Conjuntos">
+                            <label class="form-check-label" for="cat-conjuntos">Conjuntos</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-jardineira" value="Jardineira">
+                            <label class="form-check-label" for="cat-jardineira">Jardineira</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- GRID DE PRODUTOS -->
+            <section class="col-lg-9">
+                <!-- Controle de ordenação -->
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                    <span class="text-muted small" id="contador-produtos">Mostrando 6 produtos</span>
+                    <select class="form-select form-select-sm w-auto border-0 bg-light" id="ordenar-precos">
+                        <option value="0" selected>Ordenar por: Mais Recentes</option>
+                        <option value="1">Menor Preço</option>
+                        <option value="2">Maior Preço</option>
+                    </select>
+                </div>
+
+                <!-- Cards dos Produtos -->
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="grid-produtos">
+                    
+                    <!-- Produto 1 (Vestido) -->
+                    <div class="col produto-item" data-categoria="Jardineira" data-preco="350.00" data-ordem="1">
+                        <div class="card h-100 border-0 shadow-sm product-card">
+                            <img src="https://img.panoramasistemas.com.br/cabideinfantil.img/blog/4003/macacao-com-camisa-branca-basica-e-tenis.jpg" class="card-img-top" alt="Jardineira Verde" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-muted small mb-1 text-uppercase">Jardineira</span>
+                                <h5 class="card-title fs-6">Jardineira Verde </h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 350,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="fem-01" data-nome="Jardineira Verde" data-preco="350.00" data-imagem="https://img.panoramasistemas.com.br/cabideinfantil.img/blog/4003/macacao-com-camisa-branca-basica-e-tenis.jpg">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 (Blusa) -->
+                    <div class="col produto-item" data-categoria="Conjuntos" data-preco="450.00" data-ordem="2">
+                        <div class="card h-100 border-0 shadow-sm product-card">
+                            <img src="https://bugbee.cdn.magazord.com.br/img/2023/08/produto/12294/11914cj-conjunto-regata-bermuda-infantil-moda-menino-bugbee-verao-bolso-amarelo-frente-2.jpg?ims=fit-in/630x945/filters:fill(white)" class="card-img-top" alt="Conjuntos Amarelo" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-muted small mb-1 text-uppercase">Conjuntos</span>
+                                <h5 class="card-title fs-6">Conjunto Amarelo</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 450,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="fem-02" data-nome="Conjunto Amarelo" data-preco="450.00" data-imagem="https://bugbee.cdn.magazord.com.br/img/2023/08/produto/12294/11914cj-conjunto-regata-bermuda-infantil-moda-menino-bugbee-verao-bolso-amarelo-frente-2.jpg?ims=fit-in/630x945/filters:fill(white)">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3 (Calça) -->
+                    <div class="col produto-item" data-categoria="Conjuntos" data-preco="300.00" data-ordem="3">
+                        <div class="card h-100 border-0 shadow-sm product-card">
+                            <img src="https://img.ltwebstatic.com/v4/j/pi/2026/06/06/20/1780729526d8a87f87da98d0927985bf3fd940520b_thumbnail_750x999.jpg" class="card-img-top" alt="Conjunto Brasil" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-muted small mb-1 text-uppercase">Conjuntos</span>
+                                <h5 class="card-title fs-6">Conjunto Brasil</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 300,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="fem-03" data-nome="Conjunto Brasil" data-preco="3000.00" data-imagem="https://img.ltwebstatic.com/v4/j/pi/2026/06/06/20/1780729526d8a87f87da98d0927985bf3fd940520b_thumbnail_750x999.jpg">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4 (Saia) -->
+                    <div class="col produto-item" data-categoria="vestidos" data-preco="500.00" data-ordem="4">
+                        <div class="card h-100 border-0 shadow-sm product-card">
+                            <img src="https://i.pinimg.com/236x/de/f8/dd/def8dd6528c8c0f8eca68480f42e8de0.jpg" class="card-img-top" alt="Vestido Verde" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-muted small mb-1 text-uppercase">Vestidos</span>
+                                <h5 class="card-title fs-6">Vestido Verde</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 500,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="fem-04" data-nome="Vestido Verde" data-preco="500.00" data-imagem="https://i.pinimg.com/236x/de/f8/dd/def8dd6528c8c0f8eca68480f42e8de0.jpg">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 5 (Casaco) -->
+                    <div class="col produto-item" data-categoria="vestidos" data-preco="700.00" data-ordem="5">
+                        <div class="card h-100 border-0 shadow-sm product-card">
+                            <img src="https://faststorelojamilon.vtexassets.com/arquivos/ids/454393-1440-auto/6000611--3-.webp?v=639234396280770000&quality=8" class="card-img-top" alt="Vestido Amarelo" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-muted small mb-1 text-uppercase">vestidos</span>
+                                <h5 class="card-title fs-6">Vestido Amarelo</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 700,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="fem-05" data-nome="Vestido Amarelo" data-preco="700.00" data-imagem="https://faststorelojamilon.vtexassets.com/arquivos/ids/454393-1440-auto/6000611--3-.webp?v=639234396280770000&quality=8">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 6 (Vestido) -->
+                    <div class="col produto-item" data-categoria="blusas" data-preco="150.00" data-ordem="6">
+                        <div class="card h-100 border-0 shadow-sm product-card">
+                            <img src="https://bugbee.cdn.magazord.com.br/img/2023/07/produto/11302/11710-blusa-infantil-menina-moda-bugbee-verao-rosa-estampa-manga-curta-frente.jpg?ims=fit-in/630x945/filters:fill(white)" class="card-img-top" alt="Blusa Happy Here" style="height: 350px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <span class="text-muted small mb-1 text-uppercase">Blusa</span>
+                                <h5 class="card-title fs-6">Blusa Happy Here</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 150,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="fem-06" data-nome="Blusa Happy Here" data-preco="150.00" data-imagem="https://bugbee.cdn.magazord.com.br/img/2023/07/produto/11302/11710-blusa-infantil-menina-moda-bugbee-verao-rosa-estampa-manga-curta-frente.jpg?ims=fit-in/630x945/filters:fill(white)">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+    </main>
+    
+    <!-- SCRIPT GERAL (Filtros, Ordenação e Carrinho) -->
+    <script src="../assets/js/itens.js"></script>
+</body>
+</html>
