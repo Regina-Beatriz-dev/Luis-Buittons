@@ -25,6 +25,15 @@
     --animate-transition-global: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* PONTE DE COMPATIBILIDADE
+   O CSS antigo do projeto (header.css, about.css, login.css, cadastro.css,
+   contato.css...) usa var(--transition). Como o Tailwind v4 exige o prefixo
+   --animate- pra registrar a variável no @theme, recriamos aqui o nome
+   antigo apontando pro mesmo valor, sem precisar reescrever todo CSS já feito. */
+:root {
+    --transition: var(--animate-transition-global);
+}
+
 /* ========================================================
    PALETAS DE CORES DINÂMICAS (Sua API de Design no CSS)
 =========================================================== */
