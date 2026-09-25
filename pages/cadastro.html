@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta | Luis Buittons</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Links CSS | Favicon -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/cadastro.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+    <main>
+        <section class="secao-acesso">
+            <div class="quadro-acesso quadro-cadastro shadow-sm">
+                <div class="painel-marca">
+                    <span class="legenda">Faça parte</span>
+                    <h2>Vista-se com quem entende de elegância.</h2>
+                    <p>Crie sua conta e tenha acesso a coleções exclusivas, frete facilitado e acompanhamento dos seus pedidos.</p>
+                </div>
+
+                <div class="painel-formulario">
+                    <h1>Criar conta</h1>
+                    <p class="texto-boas-vindas">Preencha seus dados para começar.</p>
+
+                    <form id="formulario-cadastro" class="needs-validation" novalidate>
+                        <div class="campo">
+                            <label for="campo-nome" class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" id="campo-nome" placeholder="Seu nome completo" required>
+                            <div class="invalid-feedback">Informe seu nome completo.</div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="campo-email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="campo-email" placeholder="seuemail@exemplo.com" required>
+                            <div class="invalid-feedback">Informe um e-mail válido.</div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="campo-telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="campo-telefone" placeholder="(00) 00000-0000" required>
+                            <div class="invalid-feedback">Informe um telefone válido.</div>
+                        </div>
+
+                        <div class="dupla-campos">
+                            <div class="campo">
+                                <label for="campo-senha" class="form-label">Senha</label>
+                                <div class="grupo-senha">
+                                    <input type="password" class="form-control" id="campo-senha" placeholder="Crie uma senha" required minlength="6">
+                                    <button type="button" class="botao-mostrar-senha" data-alvo="campo-senha" aria-label="Mostrar senha">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">Mínimo de 6 caracteres.</div>
+                            </div>
+
+                            <div class="campo">
+                                <label for="campo-confirmar-senha" class="form-label">Confirmar senha</label>
+                                <div class="grupo-senha">
+                                    <input type="password" class="form-control" id="campo-confirmar-senha" placeholder="Repita a senha" required minlength="6">
+                                    <button type="button" class="botao-mostrar-senha" data-alvo="campo-confirmar-senha" aria-label="Mostrar senha">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">As senhas não coincidem.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-check campo-aceite">
+                            <input class="form-check-input" type="checkbox" id="aceite-termos" required>
+                            <label class="form-check-label" for="aceite-termos">
+                                Li e aceito os termos de uso e a política de privacidade
+                            </label>
+                            <div class="invalid-feedback">É necessário aceitar os termos para continuar.</div>
+                        </div>
+
+                        <button type="submit" class="botao-entrar">Criar conta</button>
+                    </form>
+
+                    <p class="texto-rodape-formulario">Já tem uma conta? <a href="login.html">Entrar</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AVISO -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+        <div id="aviso-formulario" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/cadastro.js"></script>
+</body>
+</html>
