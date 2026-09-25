@@ -31,13 +31,12 @@
             </hgroup>
 
             <nav class="nav">
-                <div class="nav-links">
+                <div class="nav-links collapse" id="menu-navegacao">
                     <ul>
                         <li><a href="../index.html">Início</a></li>
                         <li><a href="../pages/masculino.html">Masculino</a></li>
                         <li><a href="../pages/feminino.html">Feminino</a></li>
                         <li><a href="../pages/acessorios.html">Acessórios</a></li>
-                        <li><a href="../pages/novidades.html">Novidades</a></li>
                         <li><a href="../pages/sobre.html">Sobre nós</a></li>
                         <li><a href="../pages/contato.html">Contato</a></li>
                     </ul>
@@ -45,8 +44,14 @@
 
                 <div class="nav-actions">
                     <ul>
+                        <li><a href="#" class="text-dark"><i class="fa-regular fa-heart"></i></a></li>
                         <li><a href="../pages/carrinho.html" class="text-dark"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                        <li><a href="../pages/login.html" class="text-dark"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a id="link-usuario" href="../pages/login.html" class="text-dark" data-login="../pages/login.html" data-perfil="../pages/perfil.html"><i class="fa-solid fa-user"></i></a></li>
+                        <li>
+                            <button type="button" class="botao-menu" data-bs-toggle="collapse" data-bs-target="#menu-navegacao" aria-controls="menu-navegacao" aria-expanded="false" aria-label="Abrir menu">
+                                <i class="fa-solid fa-bars"></i>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -72,24 +77,20 @@
                     <div class="mb-4">
                         <h6 class="fw-bold mb-3">Categoria</h6>
                         <div class="form-check mb-2">
-                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-brinco" value="brinco">
-                            <label class="form-check-label" for="cat-camisas">Brinco</label>
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-colares" value="colares">
+                            <label class="form-check-label" for="cat-colares">Colares</label>
                         </div>
                         <div class="form-check mb-2">
-                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-colar" value="colar">
-                            <label class="form-check-label" for="cat-calcas">Colar</label>
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-brincos" value="brincos">
+                            <label class="form-check-label" for="cat-brincos">Brincos</label>
                         </div>
                         <div class="form-check mb-2">
-                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-pulsiera" value="pulseira">
-                            <label class="form-check-label" for="cat-casacos">Pulseira</label>
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-pulseiras" value="pulseiras">
+                            <label class="form-check-label" for="cat-pulseiras">Pulseiras</label>
                         </div>
                         <div class="form-check mb-2">
-                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-colar & anel"   value="colar & anel"> 
-                            <label class="form-check-label" for="cat-casacos">Colar & Anel</label>
-                        </div>
-                        <div class="form-check mb-2">
-                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-conjunto" value="conjunto">
-                            <label class="form-check-label" for="cat-casacos">Conjunto</label>
+                            <input class="form-check-input filtro-categoria" type="checkbox" id="cat-conjuntos" value="conjuntos">
+                            <label class="form-check-label" for="cat-conjuntos">Conjuntos</label>
                         </div>
                     </div>
                 </div>
@@ -109,91 +110,85 @@
 
                 <!-- Cards dos Produtos -->
                 <div class="row row-cols-1 row-cols-md-3 g-4" id="grid-produtos">
-                    
-                    <!-- Produto 1 (FOTO CORRIGIDA) -->
-                    <div class="col produto-item" data-categoria="brinco" data-preco="60,00" data-ordem="1">
+
+                    <div class="col produto-item" data-categoria="colares" data-preco="180.00" data-ordem="1">
                         <div class="card h-100 border-0 shadow-sm product-card">
-                            <img src="../img/acessorios/brinco.jpg" class="card-img-top" alt="Camisa Social Oxford" style="height: 350px; object-fit: cover;">
+                            <img src="../ims/acessorios/colar.webp" class="card-img-top" alt="Colar Delicado" style="height: 350px; object-fit: cover;">
                             <div class="card-body text-center d-flex flex-column">
-                                <span class="text-muted small mb-1 text-uppercase">Acessórios</span>
-                                <h5 class="card-title fs-6">Brinco de estrela</h5>
-                                <p class="fw-bold mb-3 mt-auto">R$ 60,00</p>
-                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="mas-01" data-nome="Camisa Social Oxford" data-preco="60.00" data-imagem="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                <span class="text-muted small mb-1 text-uppercase">Colares</span>
+                                <h5 class="card-title fs-6">Colar Delicado Banhado a Ouro</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 180,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="ace-01" data-nome="Colar Delicado Banhado a Ouro" data-preco="180.00" data-imagem="../ims/acessorios/colar.webp">
                                     <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Produto 2 -->
-                    <div class="col produto-item" data-categoria="brinco" data-preco="50.00" data-ordem="2">
+                    <div class="col produto-item" data-categoria="brincos" data-preco="89.00" data-ordem="2">
                         <div class="card h-100 border-0 shadow-sm product-card">
-                            <img src="../img/acessorios/brincocroche.jpg" class="card-img-top" alt="Calça Alfaiataria" style="height: 350px; object-fit: cover;">
+                            <img src="../ims/acessorios/brinco.jpg" class="card-img-top" alt="Brinco Clássico" style="height: 350px; object-fit: cover;">
                             <div class="card-body text-center d-flex flex-column">
-                                <span class="text-muted small mb-1 text-uppercase">Acessórios</span>
-                                <h5 class="card-title fs-6">Brinco de crochê</h5>
-                                <p class="fw-bold mb-3 mt-auto">R$50,00</p>
-                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="mas-02" data-nome="Calça Reta Sartorial" data-preco="50,00" data-imagem="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                <span class="text-muted small mb-1 text-uppercase">Brincos</span>
+                                <h5 class="card-title fs-6">Brinco Argola Clássico</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 89,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="ace-02" data-nome="Brinco Argola Clássico" data-preco="89.00" data-imagem="../ims/acessorios/brinco.jpg">
                                     <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Produto 3 -->
-                    <div class="col produto-item" data-categoria="colar" data-categoria="brinco" data-categoria="colar & brinco" data-preco="75,00" data-ordem="3">
+                    <div class="col produto-item" data-categoria="brincos" data-preco="65.00" data-ordem="3">
                         <div class="card h-100 border-0 shadow-sm product-card">
-                            <img src="../img/acessorios/Cojunto colar e brinco.jpg" class="card-img-top" alt="Blazer Lã" style="height: 350px; object-fit: cover;">
+                            <img src="../ims/acessorios/brincocroche.jpg" class="card-img-top" alt="Brinco de Crochê" style="height: 350px; object-fit: cover;">
                             <div class="card-body text-center d-flex flex-column">
-                                <span class="text-muted small mb-1 text-uppercase">Acessórios</span>
-                                <h5 class="card-title fs-6">Conjunto colar e brinco</h5>
-                                <p class="fw-bold mb-3 mt-auto">R$75,00</p>
-                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="mas-03" data-nome="Blazer Lã Fria" data-preco="75.00" data-imagem="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                <span class="text-muted small mb-1 text-uppercase">Brincos</span>
+                                <h5 class="card-title fs-6">Brinco de Crochê Artesanal</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 65,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="ace-03" data-nome="Brinco de Crochê Artesanal" data-preco="65.00" data-imagem="../ims/acessorios/brincocroche.jpg">
                                     <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Produto 4 -->
-                    <div class="col produto-item" data-categoria="colar" data-preco="88.00" data-ordem="4">
+                    <div class="col produto-item" data-categoria="pulseiras" data-preco="120.00" data-ordem="4">
                         <div class="card h-100 border-0 shadow-sm product-card">
-                            <img src="../img/acessorios/colar.webp" class="card-img-top" alt="Camisa Polo" style="height: 350px; object-fit: cover;">
+                            <img src="../ims/acessorios/pulseira.png" class="card-img-top" alt="Pulseira Fina" style="height: 350px; object-fit: cover;">
                             <div class="card-body text-center d-flex flex-column">
-                                <span class="text-muted small mb-1 text-uppercase">Acessórios</span>
-                                <h5 class="card-title fs-6">Colar</h5>
-                                <p class="fw-bold mb-3 mt-auto">R$ 88,00</p>
-                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="mas-04" data-nome="Camisa Polo Clássica" data-preco="88.00" data-imagem="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                <span class="text-muted small mb-1 text-uppercase">Pulseiras</span>
+                                <h5 class="card-title fs-6">Pulseira Fina Banhada a Ouro</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 120,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="ace-04" data-nome="Pulseira Fina Banhada a Ouro" data-preco="120.00" data-imagem="../ims/acessorios/pulseira.png">
                                     <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Produto 5 -->
-                    <div class="col produto-item" data-categoria="pulseira" data-preco="76.00" data-ordem="5">
+                    <div class="col produto-item" data-categoria="conjuntos" data-preco="260.00" data-ordem="5">
                         <div class="card h-100 border-0 shadow-sm product-card">
-                            <img src="../img/acessorios/pulseira.png" class="card-img-top" alt="Calça Chino" style="height: 350px; object-fit: cover;">
+                            <img src="../ims/acessorios/Cojunto colar e brinco.jpg" class="card-img-top" alt="Conjunto Colar e Brinco" style="height: 350px; object-fit: cover;">
                             <div class="card-body text-center d-flex flex-column">
-                                <span class="text-muted small mb-1 text-uppercase">Acessórios</span>
-                                <h5 class="card-title fs-6">Pulseira</h5>
-                                <p class="fw-bold mb-3 mt-auto">R$ 76,00</p>
-                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="mas-05" data-nome="Calça Chino Slim" data-preco="76.00" data-imagem="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                <span class="text-muted small mb-1 text-uppercase">Conjuntos</span>
+                                <h5 class="card-title fs-6">Conjunto Colar e Brinco</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 260,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="ace-05" data-nome="Conjunto Colar e Brinco" data-preco="260.00" data-imagem="../ims/acessorios/Cojunto colar e brinco.jpg">
                                     <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Produto 6 (FOTO CORRIGIDA) -->
-                    <div class="col produto-item" data-categoria="colar & anel" data-categoria="colar" data-categoria="anel" data-preco="90.00" data-ordem="6">
+                    <div class="col produto-item" data-categoria="conjuntos" data-preco="210.00" data-ordem="6">
                         <div class="card h-100 border-0 shadow-sm product-card">
-                            <img src="../img/acessorios/colarconjunto.webp" class="card-img-top" alt="Jaqueta Couro" style="height: 350px; object-fit: cover;">
+                            <img src="../ims/acessorios/colarconjunto.webp" class="card-img-top" alt="Conjunto de Colares" style="height: 350px; object-fit: cover;">
                             <div class="card-body text-center d-flex flex-column">
-                                <span class="text-muted small mb-1 text-uppercase">Acessórios</span>
-                                <h5 class="card-title fs-6">Conjunto colar e aneis</h5>
-                                <p class="fw-bold mb-3 mt-auto">R$ 90,00</p>
-                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="mas-06" data-nome="Jaqueta de Couro Biker" data-preco="90.00" data-imagem="https://images.unsplash.com/photo-1559551409-dadc959f76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                                <span class="text-muted small mb-1 text-uppercase">Conjuntos</span>
+                                <h5 class="card-title fs-6">Conjunto de Colares Sobrepostos</h5>
+                                <p class="fw-bold mb-3 mt-auto">R$ 210,00</p>
+                                <button class="btn btn-dark w-100 btn-add-carrinho" data-id="ace-06" data-nome="Conjunto de Colares Sobrepostos" data-preco="210.00" data-imagem="../ims/acessorios/colarconjunto.webp">
                                     <i class="fa-solid fa-cart-shopping me-2"></i> Adicionar
                                 </button>
                             </div>
@@ -207,7 +202,19 @@
     </main>
     
     <!-- SCRIPT GERAL (Filtros, Ordenação e Carrinho) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/banco-usuarios.js"></script>
+    <script src="../assets/js/sessao.js"></script>
+    <script src="../assets/js/carrinho-storage.js"></script>
     <script src="../assets/js/itens.js">
     </script>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+        <div id="toast-carrinho" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
