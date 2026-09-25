@@ -104,3 +104,78 @@
     color: var(--brand-accent) !important;
     transform: translateY(-2px); /* Elevação sutil ao passar o mouse */
 }
+
+/* Botão hamburguer — só existe visualmente abaixo do breakpoint */
+.botao-menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.4rem;
+    color: var(--brand-primary) !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =================================================
+   RESPONSIVO — evita que os ícones (fa-heart, fa-cart,
+   fa-user) quebrem linha quando a tela estreita
+==================================================== */
+@media (max-width: 992px) {
+    .header {
+        padding: 1.1rem 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        gap: 1rem;
+    }
+
+    .nav-actions ul {
+        gap: 1.2rem;
+    }
+
+    .botao-menu {
+        display: flex;
+    }
+
+    /* O menu principal vira um painel que desce por cima do conteúdo,
+       em vez de disputar espaço na mesma linha dos ícones */
+    .nav-links.collapse:not(.show) {
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-surface, #FFFFFF);
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0.5rem 1.5rem 1rem;
+    }
+
+    .nav-links ul li {
+        width: 100%;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-links ul li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a::after {
+        display: none; /* a linha de hover não faz sentido em coluna */
+    }
+}
